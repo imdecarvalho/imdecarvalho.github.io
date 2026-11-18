@@ -15,9 +15,8 @@ Mass violence and genocide studies · International security · Conflict analysi
 
 ## Education
 
-{% comment %} TODO: confirm whether Isabella wants to show the GPA. {% endcomment %}
 **B.A. in International and Comparative Politics, Minor in History**, The American University of Paris · 2023 to 2027\\
-Honors Program; Provost's List; Schaeffer Center for the Study of Genocide Scholarship. GPA 3.66/4.0
+Honors Program; Provost's List; Schaeffer Center for the Study of Genocide Scholarship.
 
 **High School Diploma**, Rudolf Steiner School, New York · 2019 to 2023
 

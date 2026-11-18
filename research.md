@@ -29,8 +29,7 @@ Competitive fellowship; project supervised by Prof. Stephen Sawyer: *Nation-Buil
 
 ## Projects
 
-{% comment %} TODO: confirm the official name: "Undergraduate Law Review" or "Undergraduate Law Journal". {% endcomment %}
-**Founding Member and Editor**, AUP Undergraduate Law Review, Center for Critical Democracy · Fall 2026 to present\\
+**Founding Member and Editor**, AUP Undergraduate Law Journal, Center for Critical Democracy · Fall 2026 to present\\
 Founding member of the first undergraduate law journal at AUP and its student club. Fact-checks legal research, edits student and faculty submissions, and contributes to concept development and outreach. First issue expected Spring 2027.
 
 {% comment %} TODO: add MUN years, conferences, committees and awards. {% endcomment %}

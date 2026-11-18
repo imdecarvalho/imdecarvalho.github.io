@@ -5,7 +5,6 @@ nav_order: 3
 
 ## Professional
 
-{% comment %} TODO: confirm official title. The Canva site said "Purchasing Division Intern". {% endcomment %}
 **Junior Data and Policy Analyst**, NYC Department of Citywide Administrative Services (DCAS), New York · Jun 2024 to Aug 2024\\
 Reviewed and cross-referenced city procurement records to assess how equity policies for women- and minority-owned businesses (M/WBE) were applied in practice; delivered analysis the division could act on.
 
