@@ -14,6 +14,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try { if (localStorage.getItem("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}</script>
   {% seo %}
   {%- if page.ref %}
   <link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
@@ -53,6 +54,7 @@
           <a href="{{ en_url | relative_url }}" hreflang="en" lang="en" title="English">EN</a><span class="lang-current" aria-current="true">FR</span>
           {%- endif %}
         </span>
+        <button class="theme-toggle" type="button" aria-label="{{ t.theme }}" title="{{ t.theme }}" hidden>{% include icon.html name="moon" %}{% include icon.html name="sun" %}</button>
       </div>
     </div>
   </header>
@@ -64,5 +66,18 @@
   <footer class="site-footer">
     <div class="container">© {{ 'now' | date: "%Y" }} {{ site.title }}</div>
   </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement, button = document.querySelector(".theme-toggle");
+      if (!button) return;
+      button.hidden = false;
+      button.addEventListener("click", function () {
+        var dark = root.getAttribute("data-theme") !== "dark";
+        if (dark) root.setAttribute("data-theme", "dark"); else root.removeAttribute("data-theme");
+        try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 </html>

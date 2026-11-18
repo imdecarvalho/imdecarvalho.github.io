@@ -38,6 +38,7 @@ Pendências ficam como comentários Liquid, que não aparecem no site nem no có
 
 ## Regras
 
+- JavaScript: só o pequeno script do botão claro/escuro em `_layouts/default.html` (modo claro é o padrão). Não adicionar outro.
 - Pedido de conteúdo: editar só os arquivos da tabela. `_layouts/`, `_includes/`, `assets/` e o resto do `_config.yml` só mudam se ela pedir mudança visual explicitamente.
 - O site existe em inglês e francês; nunca em português, mesmo quando o pedido vier em português.
 - Seguir o formato das entradas existentes; mais recente primeiro.

@@ -12,15 +12,15 @@
   --gutter: 32px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1b1917;
-    --surface: #23201d;
-    --text: #ece6dd;
-    --muted: #b3aba0;
-    --rule: #3a3531;
-    --accent: #e0a58c;
-  }
+/* Dark mode, switched on by the button in the navbar (light is the default) */
+:root[data-theme="dark"] {
+  --bg: #1b1917;
+  --surface: #23201d;
+  --text: #ece6dd;
+  --muted: #b3aba0;
+  --rule: #3a3531;
+  --accent: #e0a58c;
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -73,7 +73,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 24px;
-  margin-left: auto;
+  margin-left: 8px;
   font-size: 0.95rem;
 }
 
@@ -90,9 +90,24 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding-left: 24px;
-  border-left: 1px solid var(--rule);
+  margin-left: auto;
 }
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  margin-left: 2px;
+  background: none;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--accent); }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 .icon {
   width: 20px;
@@ -274,7 +289,7 @@ th, td { border-bottom: 1px solid var(--rule); padding: 6px 8px; text-align: lef
   body { font-size: 16px; }
   .navbar-inner { gap: 4px 10px; padding-top: 10px; padding-bottom: 4px; }
   .brand { font-size: 1rem; }
-  .nav-right { margin-left: auto; padding-left: 0; border-left: 0; gap: 2px; }
+  .nav-right { margin-left: auto; gap: 2px; }
   .icon-link { padding: 3px; }
   .lang-switch { margin-left: 6px; }
   .lang-switch a, .lang-switch .lang-current { padding: 2px 8px; }
