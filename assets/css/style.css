@@ -55,11 +55,29 @@ body {
   padding: 0 var(--gutter);
 }
 
-/* Daisy stencil in the bottom-right corner, behind the content.
+/* Page frame: navbar + content fill at least one full screen, so the footer
+   only appears after scrolling, even on short pages. */
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+.page-wrap > main { flex: 1 0 auto; width: 100%; }
+
+/* Daisy stencil in the bottom-right corner, behind the content. It stays at the
+   bottom of the screen while scrolling and stops just above the footer, rising with it.
    The drawing is a mask, so its colour follows light/dark mode. Hidden on small screens. */
-body::after {
+.daisies {
+  position: sticky;
+  bottom: 0;
+  height: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.daisies::before {
   content: "";
-  position: fixed;
+  position: absolute;
   right: 8px;
   bottom: 0;
   width: 260px;
@@ -67,10 +85,8 @@ body::after {
   background: var(--deco);
   -webkit-mask: url("../img/daisies.svg") no-repeat bottom right / contain;
           mask: url("../img/daisies.svg") no-repeat bottom right / contain;
-  pointer-events: none;
-  z-index: -1;
 }
-@media (max-width: 1279px) { body::after { display: none; } }
+@media (max-width: 1279px) { .daisies { display: none; } }
 
 /* Navbar */
 .navbar {
@@ -286,13 +302,21 @@ sup { line-height: 0; }
 table { border-collapse: collapse; width: 100%; font-size: 0.95rem; margin-bottom: 1em; }
 th, td { border-bottom: 1px solid var(--rule); padding: 6px 8px; text-align: left; }
 
-/* Footer */
+/* Footer: like the navbar, a solid band with a line; small, centered, Roboto Mono */
 .site-footer {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
   border-top: 1px solid var(--rule);
   color: var(--muted);
-  font-size: 0.85rem;
-  padding: 20px 0 40px;
+  font-family: "Roboto Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 12px var(--gutter);
 }
+.site-footer p { margin: 0; }
+.footer-name { font-size: 0.9rem; font-weight: 500; color: var(--title); }
 
 /* Tablets */
 @media (max-width: 900px) {
