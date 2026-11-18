@@ -1,0 +1,19 @@
+{%- comment -%}
+  Works out the current language and mode, and the matching pages, so every
+  link keeps the visitor's language and light/dark choice. Used by all layouts.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign theme = page.theme | default: "light" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == "en" %}{% assign other_lang = "fr" %}{% else %}{% assign other_lang = "en" %}{% endif -%}
+{%- if theme == "light" %}{% assign other_theme = "dark" %}{% else %}{% assign other_theme = "light" %}{% endif -%}
+{%- assign shells = site.pages | where_exp: "p", "p.ref != nil" -%}
+{%- assign here = shells | where: "lang", lang | where: "theme", theme -%}
+{%- assign home_url = here | where: "ref", "home" | map: "url" | first -%}
+{%- assign research_url = here | where: "ref", "research" | map: "url" | first -%}
+{%- assign ref = page.ref | default: "home" -%}
+{%- assign same = shells | where: "ref", ref -%}
+{%- assign lang_url = same | where: "lang", other_lang | where: "theme", theme | map: "url" | first -%}
+{%- assign theme_url = same | where: "lang", lang | where: "theme", other_theme | map: "url" | first -%}
+{%- assign en_light_url = same | where: "lang", "en" | where: "theme", "light" | map: "url" | first -%}
+{%- assign fr_light_url = same | where: "lang", "fr" | where: "theme", "light" | map: "url" | first -%}

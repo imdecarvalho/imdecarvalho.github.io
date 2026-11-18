@@ -1,24 +1,13 @@
+{%- include context.html -%}
 <!DOCTYPE html>
-{%- assign lang = page.lang | default: "en" -%}
-{%- assign t = site.data.i18n[lang] -%}
-{%- assign other_lang = "fr" -%}
-{%- if lang == "fr" %}{% assign other_lang = "en" %}{% endif -%}
-{%- assign t_other = site.data.i18n[other_lang] -%}
-{%- assign other_url = t_other.home_url -%}
-{%- if page.ref -%}
-  {%- assign counterpart = site.pages | where: "ref", page.ref | where: "lang", other_lang | first -%}
-  {%- if counterpart %}{% assign other_url = counterpart.url %}{% endif -%}
-{%- endif -%}
-{%- if lang == "en" -%}{% assign en_url = page.url %}{% assign fr_url = other_url %}{%- else -%}{% assign fr_url = page.url %}{% assign en_url = other_url %}{%- endif %}
-<html lang="{{ lang }}">
+<html lang="{{ lang }}" data-theme="{{ theme }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>try { if (localStorage.getItem("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}</script>
   {% seo %}
-  {%- if page.ref %}
-  <link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
-  <link rel="alternate" hreflang="fr" href="{{ fr_url | absolute_url }}">
+  {%- if page.ref and theme == "light" %}
+  <link rel="alternate" hreflang="en" href="{{ en_light_url | absolute_url }}">
+  <link rel="alternate" hreflang="fr" href="{{ fr_light_url | absolute_url }}">
   {%- endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +17,10 @@
 <body>
   <header class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="{{ t.home_url | relative_url }}">{{ site.title }}</a>
+      <a class="brand" href="{{ home_url | relative_url }}">{{ site.title }}</a>
 
       <nav class="nav-links" aria-label="Main">
-        {%- assign nav_pages = site.pages | where: "lang", lang | where_exp: "p", "p.nav_order != nil" | sort: "nav_order" -%}
+        {%- assign nav_pages = here | where_exp: "p", "p.nav_order != nil" | sort: "nav_order" -%}
         {%- for p in nav_pages %}
         <a href="{{ p.url | relative_url }}"{% if page.url == p.url %} aria-current="page"{% endif %}>{{ p.nav_title | default: p.title }}</a>
         {%- endfor %}
@@ -49,12 +38,16 @@
         {%- endif %}
         <span class="lang-switch" aria-label="{{ t.language }}">
           {%- if lang == "en" %}
-          <span class="lang-current" aria-current="true">EN</span><a href="{{ fr_url | relative_url }}" hreflang="fr" lang="fr" title="Français">FR</a>
+          <span class="lang-current" aria-current="true">EN</span><a href="{{ lang_url | relative_url }}" hreflang="fr" lang="fr" title="Français">FR</a>
           {%- else %}
-          <a href="{{ en_url | relative_url }}" hreflang="en" lang="en" title="English">EN</a><span class="lang-current" aria-current="true">FR</span>
+          <a href="{{ lang_url | relative_url }}" hreflang="en" lang="en" title="English">EN</a><span class="lang-current" aria-current="true">FR</span>
           {%- endif %}
         </span>
-        <button class="theme-toggle" type="button" aria-label="{{ t.theme }}" title="{{ t.theme }}" hidden>{% include icon.html name="moon" %}{% include icon.html name="sun" %}</button>
+        {%- if theme == "light" %}
+        <a class="icon-link theme-toggle" href="{{ theme_url | relative_url }}" aria-label="{{ t.to_dark }}" title="{{ t.to_dark }}">{% include icon.html name="moon" %}</a>
+        {%- else %}
+        <a class="icon-link theme-toggle" href="{{ theme_url | relative_url }}" aria-label="{{ t.to_light }}" title="{{ t.to_light }}">{% include icon.html name="sun" %}</a>
+        {%- endif %}
       </div>
     </div>
   </header>
@@ -66,18 +59,5 @@
   <footer class="site-footer">
     <div class="container">© {{ 'now' | date: "%Y" }} {{ site.title }}</div>
   </footer>
-
-  <script>
-    (function () {
-      var root = document.documentElement, button = document.querySelector(".theme-toggle");
-      if (!button) return;
-      button.hidden = false;
-      button.addEventListener("click", function () {
-        var dark = root.getAttribute("data-theme") !== "dark";
-        if (dark) root.setAttribute("data-theme", "dark"); else root.removeAttribute("data-theme");
-        try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) {}
-      });
-    })();
-  </script>
 </body>
 </html>

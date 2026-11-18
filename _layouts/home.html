@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-{%- assign lang = page.lang | default: "en" -%}
-{%- assign t = site.data.i18n[lang] -%}
+{%- include context.html -%}
 <div class="home">
   <aside class="profile">
     {%- if site.photo and site.photo != "" %}

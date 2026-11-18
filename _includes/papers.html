@@ -1,0 +1,10 @@
+{%- comment -%} Lists the papers in the _research folder, newest first. Shown only when there is at least one. {%- endcomment -%}
+{%- assign papers = site.research | sort: "date" | reverse -%}
+{%- if papers.size > 0 %}
+<h3>{{ include.heading }}</h3>
+<ul class="papers">
+{%- for paper in papers %}
+  <li><a href="{{ paper.url | relative_url }}">{{ paper.title }}</a><span class="meta">{{ paper.status }} · {{ paper.date | date: "%Y" }}</span>{% if paper.abstract %}<span class="summary">{{ paper.abstract | strip_html | truncatewords: 28 }}</span>{% endif %}</li>
+{%- endfor %}
+</ul>
+{%- endif %}

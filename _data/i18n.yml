@@ -1,7 +1,5 @@
 # Interface text in each language. Page content lives in the .md files.
 en:
-  home_url: /
-  research_url: /research/
   headline: "Prospective Master's candidate in Political Science"
   affiliation: "International and Comparative Politics, The American University of Paris"
   location: "Paris, France"
@@ -9,14 +7,13 @@ en:
   linkedin: "LinkedIn"
   cv: "CV (PDF)"
   language: "Language"
-  theme: "Switch between light and dark mode"
+  to_dark: "Dark mode"
+  to_light: "Light mode"
   abstract: "Abstract"
   supervised_by: "Supervised by"
   on_request: "Full text available on request."
   back: "← Research and Projects"
 fr:
-  home_url: /fr/
-  research_url: /fr/research/
   headline: "Candidate à un master en science politique"
   affiliation: "International and Comparative Politics, The American University of Paris"
   location: "Paris, France"
@@ -24,7 +21,8 @@ fr:
   linkedin: "LinkedIn"
   cv: "CV (PDF)"
   language: "Langue"
-  theme: "Basculer entre mode clair et mode sombre"
+  to_dark: "Mode sombre"
+  to_light: "Mode clair"
   abstract: "Résumé"
   supervised_by: "Sous la direction de"
   on_request: "Texte intégral disponible sur demande."

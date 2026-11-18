@@ -6,27 +6,35 @@ A Isabella não programa. Ela pede mudanças em linguagem natural, em inglês ou
 
 ## Onde fica cada informação
 
-O site é bilíngue: inglês na raiz, francês em `fr/`. **Toda mudança de conteúdo é feita nos dois idiomas** (EN e FR), com o mesmo conteúdo. Se ela escrever só num idioma, traduzir para o outro; cargos e nomes oficiais (ex.: "Junior Data and Policy Analyst", nomes de cursos) ficam no original.
+O site é bilíngue (inglês e francês) e tem modo claro (padrão) e escuro, **sem JavaScript**: cada página existe em 4 endereços (`/research/`, `/dark/research/`, `/fr/research/`, `/fr/dark/research/`). Os arquivos `index.md`, `research.md`, `experience.md` da raiz, de `dark/`, `fr/` e `fr/dark/` são só "cascas" e **não devem ser editados**: o texto de cada página fica num único arquivo por idioma em `_includes/content/en/` e `_includes/content/fr/`, e as 2 cascas (claro/escuro) de cada idioma incluem esse arquivo. O visual é um só para todas as páginas: `_layouts/default.html` + `assets/style.css`.
+
+**Toda mudança de conteúdo é feita nos dois idiomas** (EN e FR), com o mesmo conteúdo. Se ela escrever só num idioma, traduzir para o outro; cargos e nomes oficiais (ex.: "Junior Data and Policy Analyst", nomes de cursos) ficam no original.
 
 | Pedido sobre... | Arquivo |
 |---|---|
 | Nome, email, LinkedIn, descrição no Google, foto ligada/desligada | `_config.yml` |
 | Frase sob a foto ("Master's candidate..."), cidade, textos fixos da interface | `_data/i18n.yml` (EN e FR) |
-| Bio, interesses, formação, idiomas | `index.md` e `fr/index.md` |
-| Pesquisa individual, bolsas, disciplinas com pesquisa | `research.md` e `fr/research.md`, seção Research / Recherche |
-| MUN, jornal de direito, projetos em grupo, clubes | `research.md` e `fr/research.md`, seção Projects / Projets |
+| Bio, interesses, formação, idiomas | `_includes/content/en/home.md` e `_includes/content/fr/home.md` |
+| Pesquisa individual, bolsas, disciplinas com pesquisa | `_includes/content/en/research.md` e `.../fr/research.md`, seção Research / Recherche |
+| MUN, jornal de direito, projetos em grupo, clubes | `_includes/content/en/research.md` e `.../fr/research.md`, seção Projects / Projets |
 | Artigo ou paper completo | novo arquivo em `_research/<nome-curto>.md` (modelo em `_docs/paper-template.md`) + PDF em `files/papers/` |
-| Estágios, empregos, voluntariado | `experience.md` e `fr/experience.md` |
+| Estágios, empregos, voluntariado | `_includes/content/en/experience.md` e `.../fr/experience.md` |
 | CV ou foto | `files/cv.pdf`, `files/photo.jpg` (manter o nome do arquivo) |
 
 Na dúvida entre Research e Projects: trabalho individual com pergunta de pesquisa vai em Research; atividade em grupo ou extracurricular vai em Projects.
 
 ## Formatos
 
-Entrada de experiência ou projeto (o `\\` no fim da primeira linha é a quebra de linha; uma linha em branco entre entradas):
+Entrada de experiência, projeto ou formação: título (`###`, preto e maior), subtítulo com organização, cidade e datas (linha seguida de `{: .meta}`, cinza) e texto (cinza-escuro). Linhas em branco exatamente como abaixo:
 
-    **Role**, Organization, City · Mon YYYY to Mon YYYY\\
+    ### Role
+
+    Organization, City · Mon YYYY to Mon YYYY
+    {: .meta}
+
     One or two sentences on what she did and the result. [Link](url)
+
+As seções da página são títulos `##`.
 
 Em francês, datas no formato `juin 2024 – août 2024` (mês minúsculo, travessão).
 
@@ -38,8 +46,9 @@ Pendências ficam como comentários Liquid, que não aparecem no site nem no có
 
 ## Regras
 
-- JavaScript: só o pequeno script do botão claro/escuro em `_layouts/default.html` (modo claro é o padrão). Não adicionar outro.
-- Pedido de conteúdo: editar só os arquivos da tabela. `_layouts/`, `_includes/`, `assets/` e o resto do `_config.yml` só mudam se ela pedir mudança visual explicitamente.
+- Sem JavaScript. Idioma e modo claro/escuro ficam no endereço da página; não adicionar scripts.
+- Página nova: criar o texto em `_includes/content/en/` e `fr/`, e as 4 cascas copiando as existentes (mudar `ref`, `title`, `nav_order`, `permalink`).
+- Pedido de conteúdo: editar só os arquivos da tabela. `_layouts/`, `_includes/` (exceto `_includes/content/`), `assets/` e o resto do `_config.yml` só mudam se ela pedir mudança visual explicitamente.
 - O site existe em inglês e francês; nunca em português, mesmo quando o pedido vier em português.
 - Seguir o formato das entradas existentes; mais recente primeiro.
 - Tom sóbrio e acadêmico: frases curtas, sem autopromoção, sem formato STAR, sem emojis.
