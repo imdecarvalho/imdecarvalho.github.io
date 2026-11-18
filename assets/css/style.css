@@ -1,14 +1,15 @@
 /* Isabella de Carvalho, personal site. Hand-written, no framework, no JavaScript. */
 
 :root {
-  --bg: #f6f1ea;
-  --surface: #fbf8f3;
-  --title: #111111;           /* titles: near black */
-  --text: #3d3a36;            /* body text: dark gray */
-  --muted: #6f6a64;           /* subtitles and details: gray, 4.6:1 (AA) */
-  --rule: #ddd3c6;
-  --accent: #a4573c;          /* 4.7:1 on the background (AA) */
-  --deco: #ddd2c3;            /* daisy stencil, very faint */
+  /* Neutral white with sage green, taken from the daisy leaves. */
+  --bg: #fafaf8;              /* near white, no yellow */
+  --surface: #f0f2ee;
+  --title: #1d2320;           /* titles: deep green-black */
+  --text: #3d4440;            /* body text: dark gray */
+  --muted: #6b726d;           /* subtitles and details: gray, 4.7:1 (AA) */
+  --rule: #e1e4df;
+  --accent: #46623f;          /* sage green for links and the name, 6.5:1 (AA) */
+  --deco: #e3e7e0;            /* daisy stencil, very faint */
   --font: "Roboto", "Helvetica Neue", Arial, sans-serif;
   --wide: 1140px;
   --gutter: 32px;
@@ -16,14 +17,14 @@
 
 /* Dark mode: pages under /dark/ and /fr/dark/ (light is the default) */
 :root[data-theme="dark"] {
-  --bg: #1b1917;
-  --surface: #23201d;
-  --title: #f5f1ea;
-  --text: #d2cbc1;
-  --muted: #a39b91;
-  --rule: #3a3531;
-  --accent: #e0a58c;
-  --deco: #34302b;
+  --bg: #161a18;
+  --surface: #1e2320;
+  --title: #eef1ec;
+  --text: #c9cfc9;
+  --muted: #959d96;
+  --rule: #2c332e;
+  --accent: #a9c79c;
+  --deco: #242a26;
   color-scheme: dark;
 }
 
@@ -151,7 +152,7 @@ body::after {
 .lang-switch .lang-current { padding: 3px 11px; text-decoration: none; }
 .lang-switch a { color: var(--muted); }
 .lang-switch a:hover { color: var(--accent); }
-.lang-switch .lang-current { background: var(--title); color: var(--bg); }
+.lang-switch .lang-current { background: var(--accent); color: var(--bg); }
 
 /* Content */
 main.container { padding-top: 56px; padding-bottom: 72px; }
