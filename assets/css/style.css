@@ -67,44 +67,68 @@ body {
 
 /* Daisy stencil in the bottom-right corner, behind the content. It stays at the
    bottom of the screen while scrolling and stops just above the footer, where it
-   sits in a terracotta pot. Its width is the free space to the right of the content
-   (--daisy-w), so it never overlaps the text. Hidden when there is not enough room.
-   The daisy drawing is a mask, so its colour follows light/dark mode. */
-.daisies { display: none; }
-@media (min-width: 1380px) {
-  :root { --daisy-w: clamp(120px, calc((100vw - var(--wide)) / 2 + 20px), 260px); }
-  .daisies {
-    display: block;
-    position: sticky;
-    bottom: 0;
-    height: 0;
-    z-index: -1;
-    pointer-events: none;
-  }
-  .daisies::before {
-    content: "";
-    position: absolute;
-    right: 8px;
-    bottom: 0;
-    width: var(--daisy-w);
-    aspect-ratio: 250 / 600;
-    background: var(--deco);
-    -webkit-mask: url("../img/daisies.svg") no-repeat bottom right / contain;
-            mask: url("../img/daisies.svg") no-repeat bottom right / contain;
-  }
-  /* the pot, centred under the stems, sitting on the footer line */
-  .site-footer { min-height: calc(var(--daisy-w) * 0.23 + 6px); }
-  .site-footer::after {
-    content: "";
-    position: absolute;
-    top: -2px;
-    right: calc(8px + var(--daisy-w) * 0.318);
-    width: calc(var(--daisy-w) * 0.34);
-    aspect-ratio: 60 / 40;
-    background: url("../img/pot.svg") no-repeat center / contain;
-    pointer-events: none;
-  }
+   sits in a terracotta pot. The drawing is a mask, so its colour follows light/dark mode.
+
+   SIZE: the daisies fill the free space between the end of the text and the right
+   edge of the screen, never more than --daisy-max. To change the size, change these:
+     --text-w     how wide the text is on that kind of page
+     --daisy-max  the biggest the daisies may get on that kind of page            */
+body {
+  --text-w: calc(var(--wide) - 2 * var(--gutter));   /* home: text uses the full width */
+  --daisy-max: 260px;
 }
+body.layout-page,
+body.layout-paper {
+  --text-w: 860px;                                    /* Research, Experience, papers */
+  --daisy-max: 320px;
+}
+body {
+  --daisy-w: min(var(--daisy-max),
+                 calc(100vw - max(0px, (100vw - var(--wide)) / 2) - var(--gutter) - var(--text-w) - 20px));
+}
+
+.daisies {
+  display: none;
+  position: sticky;
+  bottom: 0;
+  height: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.daisies::before {
+  content: "";
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+  width: var(--daisy-w);
+  aspect-ratio: 250 / 600;
+  background: var(--deco);
+  -webkit-mask: url("../img/daisies.svg") no-repeat bottom right / contain;
+          mask: url("../img/daisies.svg") no-repeat bottom right / contain;
+}
+/* the pot, centred under the stems, sitting on the footer line */
+.site-footer::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: -2px;
+  right: calc(8px + var(--daisy-w) * 0.318);
+  width: calc(var(--daisy-w) * 0.34);
+  aspect-ratio: 60 / 40;
+  background: url("../img/pot.svg") no-repeat center / contain;
+  pointer-events: none;
+}
+/* shown only where there is room for them (at least about 120px) */
+@media (min-width: 1100px) {
+  .layout-page .daisies, .layout-paper .daisies,
+  .layout-page .site-footer::after, .layout-paper .site-footer::after { display: block; }
+  .layout-page .site-footer, .layout-paper .site-footer { min-height: calc(var(--daisy-w) * 0.23 + 6px); }
+}
+@media (min-width: 1380px) {
+  .layout-home .daisies, .layout-home .site-footer::after { display: block; }
+  .layout-home .site-footer { min-height: calc(var(--daisy-w) * 0.23 + 6px); }
+}
+
 
 /* Navbar */
 .navbar {
