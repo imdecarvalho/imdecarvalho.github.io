@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" fill="none" stroke="#b5643f" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+  <!-- Terracotta pot for the daisies: rim and tapered body, line art with a light wash -->
+  <path d="M7 11 L12 38 H48 L53 11 Z" fill="#b5643f" fill-opacity="0.14"/>
+  <rect x="3" y="2" width="54" height="9" rx="1.5" fill="#b5643f" fill-opacity="0.22"/>
+  <path d="M10 24 H50" stroke-opacity="0.45"/>
+</svg>

@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% seo %}
+  <title>Isabella de Carvalho | Political Science</title>
+  {% seo title=false %}
   {%- if page.ref and theme == "light" %}
   <link rel="alternate" hreflang="en" href="{{ en_light_url | absolute_url }}">
   <link rel="alternate" hreflang="fr" href="{{ fr_light_url | absolute_url }}">
@@ -64,7 +65,7 @@
   </div>
 
   <footer class="site-footer">
-    <p>© {{ 'now' | date: "%Y" }} <span class="footer-name">{{ site.title }}</span></p>
+    <p>© {{ 'now' | date: "%Y" }} {{ site.title }}</p>
   </footer>
 </body>
 </html>

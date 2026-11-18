@@ -66,27 +66,45 @@ body {
 .page-wrap > main { flex: 1 0 auto; width: 100%; }
 
 /* Daisy stencil in the bottom-right corner, behind the content. It stays at the
-   bottom of the screen while scrolling and stops just above the footer, rising with it.
-   The drawing is a mask, so its colour follows light/dark mode. Hidden on small screens. */
-.daisies {
-  position: sticky;
-  bottom: 0;
-  height: 0;
-  z-index: -1;
-  pointer-events: none;
+   bottom of the screen while scrolling and stops just above the footer, where it
+   sits in a terracotta pot. Its width is the free space to the right of the content
+   (--daisy-w), so it never overlaps the text. Hidden when there is not enough room.
+   The daisy drawing is a mask, so its colour follows light/dark mode. */
+.daisies { display: none; }
+@media (min-width: 1380px) {
+  :root { --daisy-w: clamp(120px, calc((100vw - var(--wide)) / 2 + 20px), 260px); }
+  .daisies {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    height: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .daisies::before {
+    content: "";
+    position: absolute;
+    right: 8px;
+    bottom: 0;
+    width: var(--daisy-w);
+    aspect-ratio: 250 / 600;
+    background: var(--deco);
+    -webkit-mask: url("../img/daisies.svg") no-repeat bottom right / contain;
+            mask: url("../img/daisies.svg") no-repeat bottom right / contain;
+  }
+  /* the pot, centred under the stems, sitting on the footer line */
+  .site-footer { min-height: calc(var(--daisy-w) * 0.23 + 6px); }
+  .site-footer::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: calc(8px + var(--daisy-w) * 0.318);
+    width: calc(var(--daisy-w) * 0.34);
+    aspect-ratio: 60 / 40;
+    background: url("../img/pot.svg") no-repeat center / contain;
+    pointer-events: none;
+  }
 }
-.daisies::before {
-  content: "";
-  position: absolute;
-  right: 8px;
-  bottom: 0;
-  width: 260px;
-  height: 624px;
-  background: var(--deco);
-  -webkit-mask: url("../img/daisies.svg") no-repeat bottom right / contain;
-          mask: url("../img/daisies.svg") no-repeat bottom right / contain;
-}
-@media (max-width: 1279px) { .daisies { display: none; } }
 
 /* Navbar */
 .navbar {
@@ -314,9 +332,11 @@ th, td { border-bottom: 1px solid var(--rule); padding: 6px 8px; text-align: lef
   letter-spacing: 0.02em;
   text-align: center;
   padding: 12px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .site-footer p { margin: 0; }
-.footer-name { font-size: 0.9rem; font-weight: 500; color: var(--title); }
 
 /* Tablets */
 @media (max-width: 900px) {
