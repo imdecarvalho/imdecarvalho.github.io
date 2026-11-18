@@ -1,0 +1,170 @@
+/* Isabella de Carvalho, personal site. Hand-written, no framework. */
+
+:root {
+  --bg: #f6f1ea;
+  --text: #1c1c1c;
+  --muted: #5e574f;
+  --rule: #ddd3c6;
+  --accent: #a4573c;          /* links: 4.7:1 on the background (AA) */
+  --accent-display: #b5694e;  /* name: large text, 3.7:1 (AA large) */
+  --display: "Cormorant Garamond", "EB Garamond", Garamond, Georgia, serif;
+  --body: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1917;
+    --text: #ece6dd;
+    --muted: #b3aba0;
+    --rule: #3a3531;
+    --accent: #e0a58c;
+    --accent-display: #e0a58c;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+}
+
+.site-header,
+main,
+.site-footer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header { padding-top: 72px; padding-bottom: 8px; }
+
+.site-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  color: var(--accent-display);
+  text-decoration: none;
+}
+
+.tagline {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  margin-top: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+
+.site-nav a { color: var(--text); text-decoration: none; }
+.site-nav a:hover { color: var(--accent); }
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+
+/* Content */
+main { padding-top: 24px; padding-bottom: 48px; }
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+}
+h1 { font-size: 2.1rem; margin: 0.6em 0 0.4em; }
+h2 { font-size: 1.65rem; margin: 2em 0 0.6em; }
+h3 { font-size: 1.3rem; margin: 1.6em 0 0.5em; }
+
+p, ul, ol { margin: 0 0 1em; }
+ul, ol { padding-left: 1.2em; }
+li { margin-bottom: 0.35em; }
+
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+
+strong { font-weight: 600; }
+
+img { max-width: 100%; height: auto; }
+
+.portrait {
+  float: right;
+  width: 160px;
+  margin: 4px 0 16px 24px;
+  border-radius: 2px;
+}
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2em 0; }
+
+/* List of papers on the Research page */
+.papers { list-style: none; padding: 0; }
+.papers li { margin-bottom: 1.1em; }
+.papers .meta, .papers .summary { display: block; }
+.papers .meta { color: var(--muted); font-size: 0.9rem; }
+.papers .summary { font-size: 0.95rem; }
+
+/* Paper pages */
+.paper-header .meta { color: var(--muted); font-size: 0.95rem; }
+.abstract h2 { font-size: 1.2rem; margin: 1.4em 0 0.3em; }
+.button {
+  display: inline-block;
+  padding: 3px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.on-request { color: var(--muted); font-style: italic; }
+.back { margin-top: 2.5em; font-size: 0.95rem; }
+
+#markdown-toc {
+  font-size: 0.95rem;
+  border-left: 1px solid var(--rule);
+  padding-left: 1.2em;
+  list-style: none;
+}
+#markdown-toc ul { list-style: none; padding-left: 1em; }
+
+.footnotes { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--rule); margin-top: 3em; padding-top: 1em; }
+sup { line-height: 0; }
+
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; margin-bottom: 1em; }
+th, td { border-bottom: 1px solid var(--rule); padding: 6px 8px; text-align: left; }
+
+/* Footer */
+.site-footer {
+  padding-top: 18px;
+  padding-bottom: 48px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--accent); }
+
+/* Phones */
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  .site-header { padding-top: 40px; }
+  .site-name { font-size: 2.2rem; }
+  .site-nav { gap: 4px 16px; }
+  .portrait { width: 120px; margin-left: 16px; }
+}

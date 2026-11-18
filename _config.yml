@@ -1,0 +1,31 @@
+# Site settings. Content lives in index.md, research.md and experience.md.
+title: "Isabella de Carvalho"
+author: "Isabella de Carvalho"
+tagline: "International and Comparative Politics · The American University of Paris"
+description: "Final-year International and Comparative Politics student at the American University of Paris, researching mass violence, international security and conflict."
+url: "https://imdecarvalho.github.io"
+baseurl: ""
+lang: en
+email: ""            # TODO: confirm public email; left empty so the footer hides it
+linkedin: "https://www.linkedin.com/in/isabella-maria-decarvalho"
+cv: "/files/cv.pdf"
+photo: ""            # "/files/photo.jpg" if she wants a photo on the Home page
+
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  research:
+    output: true
+    permalink: /research/:name/
+
+defaults:
+  - scope: { path: "", type: research }
+    values: { layout: paper }
+  - scope: { path: "" }
+    values: { layout: default }
+
+exclude: [_docs, CLAUDE.md, README.md]

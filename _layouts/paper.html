@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="paper">
+  <header class="paper-header">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      {%- if page.status %}{{ page.status }}{% endif -%}
+      {%- if page.supervisor %} · Supervised by {{ page.supervisor }}{% endif -%}
+      {%- if page.date %} · {{ page.date | date: "%B %Y" }}{% endif -%}
+    </p>
+    {%- if page.abstract %}
+    <section class="abstract">
+      <h2>Abstract</h2>
+      {{ page.abstract | markdownify }}
+    </section>
+    {%- endif %}
+    {%- if page.full_text and page.pdf %}
+    <p><a class="button" href="{{ page.pdf | relative_url }}">PDF</a></p>
+    {%- endif %}
+  </header>
+
+  {%- if page.full_text %}
+  <div class="paper-body">
+    {{ content }}
+  </div>
+  {%- else %}
+  <p class="on-request">Full text available on request.</p>
+  {%- endif %}
+
+  <p class="back"><a href="{{ '/research/' | relative_url }}">← Research and Projects</a></p>
+</article>
