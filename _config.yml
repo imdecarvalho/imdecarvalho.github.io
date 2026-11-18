@@ -6,7 +6,7 @@ description: "Final-year International and Comparative Politics student at the A
 url: "https://imdecarvalho.github.io"
 baseurl: ""
 lang: en
-email: ""            # TODO: confirm public email; left empty so the footer hides it
+email: "imdecarvalho@outlook.com"
 linkedin: "https://www.linkedin.com/in/isabella-maria-decarvalho"
 cv: "/files/cv.pdf"
 photo: ""            # "/files/photo.jpg" if she wants a photo on the Home page
