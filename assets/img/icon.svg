@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- IC monogram, redrawn from Isabella's sketch: a serif I, and a C whose back crosses the I's foot -->
-  <rect width="32" height="32" rx="7" fill="#1f3a5f"/>
-  <g fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" transform="translate(0 -1)">
-    <path d="M11 7v15M7.5 7h7M7.5 22h7"/>
-    <path d="M24 14.6A7 7 0 1 0 24 25.4"/>
-  </g>
-</svg>

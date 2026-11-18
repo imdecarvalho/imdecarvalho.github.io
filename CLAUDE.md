@@ -16,7 +16,7 @@ _layouts/                default.html (base de todas as páginas: navbar, rodap�
 _pages/en/ e _pages/fr/  "cascas" das páginas (+ subpasta dark/ para o modo escuro). Não editar.
 _research/               artigos (um .md por artigo)
 assets/css/style.css     todo o visual
-assets/img/              profile.jpg (foto), icon.svg + PNGs (ícone IC), daisies.svg (margaridas do fundo)
+assets/img/              profile.jpg (foto), daisies.svg (margaridas do fundo)
 files/                   cv.pdf e papers/ (PDFs dos artigos)
 _docs/                   especificação original e modelo de artigo (fora do site)
 ```
