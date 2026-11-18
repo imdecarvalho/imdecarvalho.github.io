@@ -16,7 +16,7 @@ _layouts/                default.html (base de todas as páginas: navbar, rodap�
 _pages/en/ e _pages/fr/  "cascas" das páginas (+ subpasta dark/ para o modo escuro). Não editar.
 _research/               artigos (um .md por artigo)
 assets/css/style.css     todo o visual
-assets/img/              profile.jpg (foto), daisies.svg (margaridas do fundo)
+assets/img/              profile.jpg (foto), daisies.svg (margaridas do fundo), icon.svg + favicon-32.png + apple-touch-icon.png (ícone da aba: margarida), pot.svg (vaso)
 files/                   cv.pdf e papers/ (PDFs dos artigos)
 _docs/                   especificação original e modelo de artigo (fora do site)
 ```
@@ -71,6 +71,7 @@ Pendências ficam como comentários Liquid, que não aparecem no site nem no có
 - Tom sóbrio e acadêmico: frases curtas, sem autopromoção, sem formato STAR, sem emojis.
 - Não inventar datas, títulos, coautores ou resultados. Se faltar algo, perguntar.
 - Nunca publicar telefone, endereço ou dados de terceiros.
+- A foto dela não deve aparecer na pré-visualização de links (WhatsApp, LinkedIn): não definir `image` no `_config.yml` nem nas páginas.
 - Imagens com menos de 300 KB.
 - Commits: autora "Isabella de Carvalho <imdecarvalho@users.noreply.github.com>". Nunca mencionar Claude no commit (sem linha Co-Authored-By nem atribuição em pull requests).
 - Antes de publicar, resumir em 2 ou 3 linhas o que vai mudar e esperar um "ok".
