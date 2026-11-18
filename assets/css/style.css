@@ -1,15 +1,15 @@
 /* Isabella de Carvalho, personal site. Hand-written, no framework, no JavaScript. */
 
 :root {
-  /* Neutral white with sage green, taken from the daisy leaves. */
-  --bg: #fafaf8;              /* near white, no yellow */
-  --surface: #f0f2ee;
-  --title: #1d2320;           /* titles: deep green-black */
-  --text: #3d4440;            /* body text: dark gray */
-  --muted: #6b726d;           /* subtitles and details: gray, 4.7:1 (AA) */
-  --rule: #e1e4df;
-  --accent: #46623f;          /* sage green for links and the name, 6.5:1 (AA) */
-  --deco: #e3e7e0;            /* daisy stencil, very faint */
+  /* Cool white with navy blue. */
+  --bg: #f8f9fb;
+  --surface: #eef1f5;
+  --title: #14213d;           /* titles: deep navy */
+  --text: #3a4250;            /* body text: dark gray */
+  --muted: #687080;           /* subtitles and details: gray */
+  --rule: #dfe3ea;
+  --accent: #1f3a5f;          /* navy for links, your name, active tab */
+  --deco: #e2e6ed;            /* daisy stencil, very faint */
   --font: "Roboto", "Helvetica Neue", Arial, sans-serif;
   --wide: 1140px;
   --gutter: 32px;
@@ -17,14 +17,14 @@
 
 /* Dark mode: pages under /dark/ and /fr/dark/ (light is the default) */
 :root[data-theme="dark"] {
-  --bg: #161a18;
-  --surface: #1e2320;
-  --title: #eef1ec;
-  --text: #c9cfc9;
-  --muted: #959d96;
-  --rule: #2c332e;
-  --accent: #a9c79c;
-  --deco: #242a26;
+  --bg: #0f1622;
+  --surface: #172131;
+  --title: #eef2f7;
+  --text: #c7cfdb;
+  --muted: #929cad;
+  --rule: #26324a;
+  --accent: #9db8de;
+  --deco: #1a2436;
   color-scheme: dark;
 }
 
