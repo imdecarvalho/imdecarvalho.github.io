@@ -28,4 +28,5 @@ defaults:
   - scope: { path: "" }
     values: { image: /assets/img/profile.jpg }   # preview picture when the link is shared (LinkedIn, WhatsApp)
 
+include: [_pages]          # page shells live in _pages/ (en, fr, and their dark versions)
 exclude: [_docs, CLAUDE.md, README.md]

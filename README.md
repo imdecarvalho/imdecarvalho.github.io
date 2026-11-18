@@ -18,3 +18,9 @@ Claude will tell you what it is going to change and wait for your OK. The site u
 ## Uploading a file yourself (optional)
 
 On github.com, open the `files` folder, click "Add file" then "Upload files". To replace your CV, upload a file with exactly the same name: `cv.pdf`.
+
+## Where things are
+
+- The text of each page: `_includes/content/en/` (English) and `_includes/content/fr/` (French).
+- Your photo: `assets/img/profile.jpg`. Your CV: `files/cv.pdf`.
+- The look of the site (colours, fonts, spacing): `assets/css/style.css`.

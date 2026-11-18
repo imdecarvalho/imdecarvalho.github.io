@@ -8,6 +8,7 @@
   --muted: #6f6a64;           /* subtitles and details: gray, 4.6:1 (AA) */
   --rule: #ddd3c6;
   --accent: #a4573c;          /* 4.7:1 on the background (AA) */
+  --deco: #ddd2c3;            /* daisy stencil, very faint */
   --font: "Roboto", "Helvetica Neue", Arial, sans-serif;
   --wide: 1140px;
   --gutter: 32px;
@@ -22,10 +23,18 @@
   --muted: #a39b91;
   --rule: #3a3531;
   --accent: #e0a58c;
+  --deco: #34302b;
   color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+
+/* Smooth switch between pages (language, light/dark): the browser cross-fades
+   instead of flashing, and the photo, name and navbar stay in place. CSS only. */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.18s; }
+.navbar { view-transition-name: navbar; }
+.profile-name { view-transition-name: profile-name; }
 html { -webkit-text-size-adjust: 100%; }
 
 body {
@@ -44,6 +53,23 @@ body {
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
+
+/* Daisy stencil in the bottom-right corner, behind the content.
+   The drawing is a mask, so its colour follows light/dark mode. Hidden on small screens. */
+body::after {
+  content: "";
+  position: fixed;
+  right: 8px;
+  bottom: 0;
+  width: 210px;
+  height: 504px;
+  background: var(--deco);
+  -webkit-mask: url("../img/daisies.svg") no-repeat bottom right / contain;
+          mask: url("../img/daisies.svg") no-repeat bottom right / contain;
+  pointer-events: none;
+  z-index: -1;
+}
+@media (max-width: 1279px) { body::after { display: none; } }
 
 /* Navbar */
 .navbar {
@@ -179,9 +205,11 @@ img { max-width: 100%; height: auto; }
   display: block;
   width: 220px;
   height: 220px;
-  border-radius: 50%;
+  border-radius: 2px;
   object-fit: cover;
+  background: var(--surface);   /* no blank flash while the photo loads */
   margin-bottom: 24px;
+  view-transition-name: profile-photo;
 }
 
 .profile-placeholder {

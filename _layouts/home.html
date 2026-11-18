@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-{%- include context.html -%}
+{%- include components/context.html -%}
 <div class="home">
   <aside class="profile">
     {%- if site.photo and site.photo != "" %}
-    <img class="profile-photo" src="{{ site.photo | relative_url }}" alt="{{ site.title }}" width="220" height="220" decoding="async">
+    <img class="profile-photo" src="{{ site.photo | relative_url }}" alt="{{ site.title }}" width="220" height="220" fetchpriority="high">
     {%- else %}
     <div class="profile-photo profile-placeholder" aria-hidden="true">IC</div>
     {%- endif %}
@@ -13,15 +13,15 @@ layout: default
     <p class="profile-headline">{{ t.headline }}</p>
     <p class="profile-affiliation">{{ t.affiliation }}</p>
     <ul class="profile-contacts">
-      <li>{% include icon.html name="pin" %}<span>{{ t.location }}</span></li>
+      <li>{% include components/icon.html name="pin" %}<span>{{ t.location }}</span></li>
       {%- if site.email and site.email != "" %}
-      <li>{% include icon.html name="mail" %}<a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+      <li>{% include components/icon.html name="mail" %}<a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
       {%- endif %}
       {%- if site.linkedin and site.linkedin != "" %}
-      <li>{% include icon.html name="linkedin" %}<a href="{{ site.linkedin }}">{{ t.linkedin }}</a></li>
+      <li>{% include components/icon.html name="linkedin" %}<a href="{{ site.linkedin }}">{{ t.linkedin }}</a></li>
       {%- endif %}
       {%- if site.cv and site.cv != "" %}
-      <li>{% include icon.html name="cv" %}<a href="{{ site.cv | relative_url }}">{{ t.cv }}</a></li>
+      <li>{% include components/icon.html name="cv" %}<a href="{{ site.cv | relative_url }}">{{ t.cv }}</a></li>
       {%- endif %}
     </ul>
   </aside>

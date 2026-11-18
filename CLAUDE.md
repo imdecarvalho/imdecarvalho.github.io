@@ -4,9 +4,26 @@ Este repo é o site pessoal de Isabella de Carvalho (https://imdecarvalho.github
 
 A Isabella não programa. Ela pede mudanças em linguagem natural, em inglês ou português. Responda na língua dela, em linguagem simples, sem jargão técnico (diga "publiquei a alteração", não "fiz commit").
 
-## Onde fica cada informação
+## Estrutura do repo
 
-O site é bilíngue (inglês e francês) e tem modo claro (padrão) e escuro, **sem JavaScript**: cada página existe em 4 endereços (`/research/`, `/dark/research/`, `/fr/research/`, `/fr/dark/research/`). Os arquivos `index.md`, `research.md`, `experience.md` da raiz, de `dark/`, `fr/` e `fr/dark/` são só "cascas" e **não devem ser editados**: o texto de cada página fica num único arquivo por idioma em `_includes/content/en/` e `_includes/content/fr/`, e as 2 cascas (claro/escuro) de cada idioma incluem esse arquivo. O visual é um só para todas as páginas: `_layouts/default.html` + `assets/style.css`.
+```
+_config.yml              nome, email, LinkedIn, foto, CV, plugins
+_data/i18n.yml           textos fixos da interface em EN e FR (frase sob a foto, cidade, rótulos)
+_includes/content/en/    O TEXTO DO SITE em inglês: home.md, research.md, experience.md
+_includes/content/fr/    o mesmo texto em francês
+_includes/components/    peças do layout: context.html (idioma/modo), icon.html (ícones), papers.html (lista de artigos)
+_layouts/                default.html (base de todas as páginas: navbar, rodapé), home.html (foto + coluna), page.html, paper.html
+_pages/en/ e _pages/fr/  "cascas" das páginas (+ subpasta dark/ para o modo escuro). Não editar.
+_research/               artigos (um .md por artigo)
+assets/css/style.css     todo o visual
+assets/img/              profile.jpg (foto), icon.svg + PNGs (ícone IC), daisies.svg (margaridas do fundo)
+files/                   cv.pdf e papers/ (PDFs dos artigos)
+_docs/                   especificação original e modelo de artigo (fora do site)
+```
+
+O site é bilíngue (inglês e francês) e tem modo claro (padrão) e escuro, **sem JavaScript**: cada página existe em 4 endereços (`/research/`, `/dark/research/`, `/fr/research/`, `/fr/dark/research/`). Os arquivos em `_pages/` são só "cascas" e **não devem ser editados**: o texto de cada página fica num único arquivo por idioma em `_includes/content/en/` e `_includes/content/fr/`, e as 2 cascas (claro/escuro) de cada idioma incluem esse arquivo. O visual é um só para todas as páginas: `_layouts/default.html` + `assets/css/style.css`.
+
+## Onde fica cada informação
 
 **Toda mudança de conteúdo é feita nos dois idiomas** (EN e FR), com o mesmo conteúdo. Se ela escrever só num idioma, traduzir para o outro; cargos e nomes oficiais (ex.: "Junior Data and Policy Analyst", nomes de cursos) ficam no original.
 
@@ -47,7 +64,7 @@ Pendências ficam como comentários Liquid, que não aparecem no site nem no có
 ## Regras
 
 - Sem JavaScript. Idioma e modo claro/escuro ficam no endereço da página; não adicionar scripts.
-- Página nova: criar o texto em `_includes/content/en/` e `fr/`, e as 4 cascas copiando as existentes (mudar `ref`, `title`, `nav_order`, `permalink`).
+- Página nova: criar o texto em `_includes/content/en/` e `fr/`, e as 4 cascas em `_pages/en/`, `_pages/en/dark/`, `_pages/fr/`, `_pages/fr/dark/` copiando as existentes (mudar `ref`, `title`, `nav_order`, `permalink`).
 - Pedido de conteúdo: editar só os arquivos da tabela. `_layouts/`, `_includes/` (exceto `_includes/content/`), `assets/` e o resto do `_config.yml` só mudam se ela pedir mudança visual explicitamente.
 - O site existe em inglês e francês; nunca em português, mesmo quando o pedido vier em português.
 - Seguir o formato das entradas existentes; mais recente primeiro.
