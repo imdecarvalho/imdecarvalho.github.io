@@ -72,15 +72,16 @@ body {
    SIZE: the daisies fill the free space between the end of the text and the right
    edge of the screen, never more than --daisy-max. To change the size, change these:
      --text-w     how wide the text is on that kind of page
-     --daisy-max  the biggest the daisies may get on that kind of page            */
+     --daisy-max  the biggest the daisies may get on that kind of page; the vh part
+                  keeps them in proportion to the screen height (height = 2.4 x width) */
 body {
   --text-w: calc(var(--wide) - 2 * var(--gutter));   /* home: text uses the full width */
-  --daisy-max: 260px;
+  --daisy-max: min(200px, 20vh);                      /* home: smallest, the text is wide */
 }
 body.layout-page,
 body.layout-paper {
   --text-w: 860px;                                    /* Research, Experience, papers */
-  --daisy-max: 320px;
+  --daisy-max: min(230px, 25vh);                      /* a bit bigger than home, about 60% of the screen height at most */
 }
 body {
   --daisy-w: min(var(--daisy-max),
