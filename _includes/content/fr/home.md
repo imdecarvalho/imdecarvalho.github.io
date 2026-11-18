@@ -2,13 +2,13 @@ Je suis en dernière année de licence en politique internationale et comparée 
 
 ## Thèmes de recherche
 
-Études sur la violence de masse et le génocide · Sécurité internationale · Analyse des conflits · Droit international et droit des réfugiés · Politiques migratoires
+Études sur la violence de masse et le génocide · Sécurité internationale · Analyse des conflits · Droit international et droit des réfugiés · Politiques migratoires · Analyse des risques géopolitiques
 
 ## Formation
 
 ### B.A. en politique internationale et comparée, mineure en histoire
 
-The American University of Paris · 2023 – 2027
+The American University of Paris, Paris · automne 2023 – printemps 2027
 {: .meta}
 
 Honors Program ; Provost's List ; bourse du Schaeffer Center for the Study of Genocide.

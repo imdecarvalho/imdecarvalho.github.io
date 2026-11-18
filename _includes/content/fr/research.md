@@ -5,7 +5,7 @@
 Schaeffer Center for the Study of Genocide, AUP · printemps 2026 – aujourd'hui
 {: .meta}
 
-Bourse de recherche sélective ; projet dirigé par le Pr Stephen Sawyer : *Nation-Building, Identity Absolutism, and Religious Mass Violence in 16th-Century France*. Étude de cas comparative du massacre de la Saint-Barthélemy (1572) à Paris et à Lyon, qui examine comment l'autorisation des élites et les institutions civiques, judiciaires et religieuses ont coordonné une violence fondée sur l'identité. Recherches aux Archives municipales de Lyon, aux Archives départementales du Rhône, aux Archives nationales et à la Bibliothèque nationale de France.
+Bourse de recherche sélective ; projet dirigé par le Pr Stephen Sawyer : *Nation-Building, Identity Absolutism, and Religious Mass Violence in 16th-Century France*. Étude de cas comparative du massacre de la Saint-Barthélemy (1572) à Paris et à Lyon, qui examine comment l'autorisation des élites et les institutions civiques, judiciaires et religieuses ont coordonné une violence fondée sur l'identité. Recherches aux Archives municipales de Lyon, aux Archives départementales du Rhône, aux Archives nationales et à la Bibliothèque nationale de France, à partir de sources en français et en anglais.
 
 {% include papers.html heading="Articles" %}
 

@@ -5,7 +5,7 @@
 Schaeffer Center for the Study of Genocide, AUP · Spring 2026 to present
 {: .meta}
 
-Competitive fellowship; project supervised by Prof. Stephen Sawyer: *Nation-Building, Identity Absolutism, and Religious Mass Violence in 16th-Century France*. Comparative case study of the St. Bartholomew's Day Massacre (1572) in Paris and Lyon, examining how elite authorisation and civic, judicial and religious institutions coordinated identity-based violence. Archival research at the Archives Municipales de Lyon, Archives Départementales du Rhône, Archives Nationales and Bibliothèque nationale de France.
+Competitive fellowship; project supervised by Prof. Stephen Sawyer: *Nation-Building, Identity Absolutism, and Religious Mass Violence in 16th-Century France*. Comparative case study of the St. Bartholomew's Day Massacre (1572) in Paris and Lyon, examining how elite authorisation and civic, judicial and religious institutions coordinated identity-based violence. Archival research at the Archives Municipales de Lyon, Archives Départementales du Rhône, Archives Nationales and Bibliothèque nationale de France, reading and synthesising French and English sources.
 
 {% include papers.html heading="Papers" %}
 

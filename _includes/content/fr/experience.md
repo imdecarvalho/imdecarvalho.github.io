@@ -5,7 +5,7 @@
 NYC Department of Citywide Administrative Services (DCAS), New York · juin 2024 – août 2024
 {: .meta}
 
-Examen et recoupement des registres de marchés publics de la ville pour évaluer l'application concrète des politiques d'équité envers les entreprises détenues par des femmes et des minorités (M/WBE) ; analyse livrée sous une forme directement exploitable par la division.
+Examen et recoupement des registres de marchés publics de la ville pour évaluer l'application concrète des politiques d'équité envers les entreprises détenues par des femmes et des minorités (M/WBE). Travail autonome sur Excel pour repérer les incohérences dans les données et livrer une analyse directement exploitable par la division.
 
 ### Agente électorale (Election Poll Worker)
 

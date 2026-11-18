@@ -9,7 +9,7 @@ lang: en
 email: "imdecarvalho@outlook.com"
 linkedin: "https://www.linkedin.com/in/isabella-maria-decarvalho"
 cv: "/files/cv.pdf"
-photo: ""            # set to "/files/photo.jpg" once the photo is uploaded; until then the Home page shows initials
+photo: "/assets/img/profile.jpg"
 
 markdown: kramdown
 
@@ -25,5 +25,7 @@ collections:
 defaults:
   - scope: { path: "", type: research }
     values: { layout: paper, lang: en, theme: light }
+  - scope: { path: "" }
+    values: { image: /assets/img/profile.jpg }   # preview picture when the link is shared (LinkedIn, WhatsApp)
 
 exclude: [_docs, CLAUDE.md, README.md]

@@ -19,7 +19,7 @@ O site é bilíngue (inglês e francês) e tem modo claro (padrão) e escuro, **
 | MUN, jornal de direito, projetos em grupo, clubes | `_includes/content/en/research.md` e `.../fr/research.md`, seção Projects / Projets |
 | Artigo ou paper completo | novo arquivo em `_research/<nome-curto>.md` (modelo em `_docs/paper-template.md`) + PDF em `files/papers/` |
 | Estágios, empregos, voluntariado | `_includes/content/en/experience.md` e `.../fr/experience.md` |
-| CV ou foto | `files/cv.pdf`, `files/photo.jpg` (manter o nome do arquivo) |
+| CV ou foto | `files/cv.pdf`, `assets/img/profile.jpg` (manter o nome; foto quadrada, 480×480, JPEG < 60 KB, sem metadados) |
 
 Na dúvida entre Research e Projects: trabalho individual com pergunta de pesquisa vai em Research; atividade em grupo ou extracurricular vai em Projects.
 

@@ -5,7 +5,7 @@
 NYC Department of Citywide Administrative Services (DCAS), New York · Jun 2024 to Aug 2024
 {: .meta}
 
-Reviewed and cross-referenced city procurement records to assess how equity policies for women- and minority-owned businesses (M/WBE) were applied in practice; delivered analysis the division could act on.
+Reviewed and cross-referenced city procurement records to assess how equity policies for women- and minority-owned businesses (M/WBE) were applied in practice. Worked independently in Excel to flag data inconsistencies and deliver analysis the division could act on.
 
 ### Election Poll Worker
 

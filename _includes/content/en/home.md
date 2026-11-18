@@ -2,13 +2,13 @@ I am a final-year International and Comparative Politics student at the American
 
 ## Research interests
 
-Mass violence and genocide studies · International security · Conflict analysis · International law and refugee law · Migration policy
+Mass violence and genocide studies · International security · Conflict analysis · International law and refugee law · Migration policy · Geopolitical risk analysis
 
 ## Education
 
 ### B.A. in International and Comparative Politics, Minor in History
 
-The American University of Paris · 2023 to 2027
+The American University of Paris, Paris, France · Fall 2023 to Spring 2027
 {: .meta}
 
 Honors Program; Provost's List; Schaeffer Center for the Study of Genocide Scholarship.
