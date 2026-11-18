@@ -272,9 +272,13 @@ th, td { border-bottom: 1px solid var(--rule); padding: 6px 8px; text-align: lef
 @media (max-width: 640px) {
   :root { --gutter: 20px; }
   body { font-size: 16px; }
-  .navbar-inner { gap: 4px 16px; padding-top: 10px; padding-bottom: 6px; }
-  .nav-right { margin-left: auto; padding-left: 0; border-left: 0; gap: 8px; }
-  .nav-links { order: 3; width: 100%; margin-left: 0; gap: 2px 18px; }
+  .navbar-inner { gap: 4px 10px; padding-top: 10px; padding-bottom: 4px; }
+  .brand { font-size: 1rem; }
+  .nav-right { margin-left: auto; padding-left: 0; border-left: 0; gap: 2px; }
+  .icon-link { padding: 3px; }
+  .lang-switch { margin-left: 6px; }
+  .lang-switch a, .lang-switch .lang-current { padding: 2px 8px; }
+  .nav-links { order: 3; width: 100%; margin-left: 0; gap: 0 16px; font-size: 0.9rem; }
   main.container { padding-top: 32px; }
   .profile { display: block; }
   .profile-photo { width: 120px; height: 120px; margin-bottom: 18px; }
