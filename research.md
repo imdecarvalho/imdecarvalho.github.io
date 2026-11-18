@@ -1,8 +1,12 @@
 ---
+layout: page
+lang: en
+ref: research
 title: Research and Projects
 nav_order: 2
 permalink: /research/
 ---
+
 
 ## Research
 

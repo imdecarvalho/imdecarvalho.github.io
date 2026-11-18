@@ -1,41 +1,68 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en' }}">
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign other_lang = "fr" -%}
+{%- if lang == "fr" %}{% assign other_lang = "en" %}{% endif -%}
+{%- assign t_other = site.data.i18n[other_lang] -%}
+{%- assign other_url = t_other.home_url -%}
+{%- if page.ref -%}
+  {%- assign counterpart = site.pages | where: "ref", page.ref | where: "lang", other_lang | first -%}
+  {%- if counterpart %}{% assign other_url = counterpart.url %}{% endif -%}
+{%- endif -%}
+{%- if lang == "en" -%}{% assign en_url = page.url %}{% assign fr_url = other_url %}{%- else -%}{% assign fr_url = page.url %}{% assign en_url = other_url %}{%- endif %}
+<html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% seo %}
+  {%- if page.ref %}
+  <link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
+  <link rel="alternate" hreflang="fr" href="{{ fr_url | absolute_url }}">
+  {%- endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
-  <header class="site-header">
-    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    <p class="tagline">{{ site.tagline }}</p>
-    <nav class="site-nav" aria-label="Main">
-      {%- assign nav_pages = site.pages | where_exp: "p", "p.nav_order != nil" | sort: "nav_order" -%}
-      {%- for p in nav_pages %}
-      <a href="{{ p.url | relative_url }}"{% if page.url == p.url %} aria-current="page"{% endif %}>{{ p.nav_title | default: p.title }}</a>
-      {%- endfor %}
-      {%- if site.cv and site.cv != "" %}
-      <a href="{{ site.cv | relative_url }}">CV</a>
-      {%- endif %}
-    </nav>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="{{ t.home_url | relative_url }}">{{ site.title }}</a>
+
+      <nav class="nav-links" aria-label="Main">
+        {%- assign nav_pages = site.pages | where: "lang", lang | where_exp: "p", "p.nav_order != nil" | sort: "nav_order" -%}
+        {%- for p in nav_pages %}
+        <a href="{{ p.url | relative_url }}"{% if page.url == p.url %} aria-current="page"{% endif %}>{{ p.nav_title | default: p.title }}</a>
+        {%- endfor %}
+        {%- if site.cv and site.cv != "" %}
+        <a href="{{ site.cv | relative_url }}">CV</a>
+        {%- endif %}
+      </nav>
+
+      <div class="nav-right">
+        {%- if site.email and site.email != "" %}
+        <a class="icon-link" href="mailto:{{ site.email }}" aria-label="{{ t.email }}: {{ site.email }}" title="{{ site.email }}">{% include icon.html name="mail" %}</a>
+        {%- endif %}
+        {%- if site.linkedin and site.linkedin != "" %}
+        <a class="icon-link" href="{{ site.linkedin }}" aria-label="LinkedIn" title="LinkedIn">{% include icon.html name="linkedin" %}</a>
+        {%- endif %}
+        <span class="lang-switch" aria-label="{{ t.language }}">
+          {%- if lang == "en" %}
+          <span class="lang-current" aria-current="true">EN</span><a href="{{ fr_url | relative_url }}" hreflang="fr" lang="fr" title="Français">FR</a>
+          {%- else %}
+          <a href="{{ en_url | relative_url }}" hreflang="en" lang="en" title="English">EN</a><span class="lang-current" aria-current="true">FR</span>
+          {%- endif %}
+        </span>
+      </div>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     {{ content }}
   </main>
 
   <footer class="site-footer">
-    {%- if site.email and site.email != "" %}
-    <a href="mailto:{{ site.email }}">{{ site.email }}</a><span class="sep"> · </span>
-    {%- endif %}
-    {%- if site.linkedin and site.linkedin != "" %}
-    <a href="{{ site.linkedin }}">LinkedIn</a><span class="sep"> · </span>
-    {%- endif %}
-    <span>© {{ 'now' | date: "%Y" }} {{ site.title }}</span>
+    <div class="container">© {{ 'now' | date: "%Y" }} {{ site.title }}</div>
   </footer>
 </body>
 </html>

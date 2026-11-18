@@ -9,7 +9,7 @@ lang: en
 email: "imdecarvalho@outlook.com"
 linkedin: "https://www.linkedin.com/in/isabella-maria-decarvalho"
 cv: "/files/cv.pdf"
-photo: ""            # "/files/photo.jpg" if she wants a photo on the Home page
+photo: ""            # set to "/files/photo.jpg" once the photo is uploaded; until then the Home page shows initials
 
 markdown: kramdown
 
@@ -25,7 +25,9 @@ collections:
 defaults:
   - scope: { path: "", type: research }
     values: { layout: paper }
-  - scope: { path: "" }
-    values: { layout: default }
+  - scope: { path: "", type: pages }
+    values: { layout: page, lang: en }
+  - scope: { path: "fr", type: pages }
+    values: { layout: page, lang: fr }
 
 exclude: [_docs, CLAUDE.md, README.md]

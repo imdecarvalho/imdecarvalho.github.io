@@ -1,11 +1,11 @@
 ---
+layout: home
+lang: en
+ref: home
 nav_title: Home
 nav_order: 1
 ---
 
-{% if site.photo and site.photo != "" %}
-<img class="portrait" src="{{ site.photo | relative_url }}" alt="Portrait of Isabella de Carvalho" width="160">
-{% endif %}
 
 I am a final-year International and Comparative Politics student at the American University of Paris, with a minor in History, and a research fellow at the Schaeffer Center for the Study of Genocide. My research looks at how states and societies escalate toward mass violence and how it can be prevented, currently through religious violence in sixteenth-century France. My coursework spans international conflict, security, international law and political history. I am applying to Master's programmes in international security for 2027.
 

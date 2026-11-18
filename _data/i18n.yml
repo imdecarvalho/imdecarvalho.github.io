@@ -1,0 +1,29 @@
+# Interface text in each language. Page content lives in the .md files.
+en:
+  home_url: /
+  research_url: /research/
+  headline: "Prospective Master's candidate in Political Science"
+  affiliation: "International and Comparative Politics, The American University of Paris"
+  location: "Paris, France"
+  email: "Email"
+  linkedin: "LinkedIn"
+  cv: "CV (PDF)"
+  language: "Language"
+  abstract: "Abstract"
+  supervised_by: "Supervised by"
+  on_request: "Full text available on request."
+  back: "← Research and Projects"
+fr:
+  home_url: /fr/
+  research_url: /fr/research/
+  headline: "Candidate à un master en science politique"
+  affiliation: "International and Comparative Politics, The American University of Paris"
+  location: "Paris, France"
+  email: "E-mail"
+  linkedin: "LinkedIn"
+  cv: "CV (PDF)"
+  language: "Langue"
+  abstract: "Résumé"
+  supervised_by: "Sous la direction de"
+  on_request: "Texte intégral disponible sur demande."
+  back: "← Recherche et projets"

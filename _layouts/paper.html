@@ -1,17 +1,19 @@
 ---
 layout: default
 ---
-<article class="paper">
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign t = site.data.i18n[lang] -%}
+<article class="page paper">
   <header class="paper-header">
     <h1>{{ page.title }}</h1>
     <p class="meta">
       {%- if page.status %}{{ page.status }}{% endif -%}
-      {%- if page.supervisor %} · Supervised by {{ page.supervisor }}{% endif -%}
+      {%- if page.supervisor %} · {{ t.supervised_by }} {{ page.supervisor }}{% endif -%}
       {%- if page.date %} · {{ page.date | date: "%B %Y" }}{% endif -%}
     </p>
     {%- if page.abstract %}
     <section class="abstract">
-      <h2>Abstract</h2>
+      <h2>{{ t.abstract }}</h2>
       {{ page.abstract | markdownify }}
     </section>
     {%- endif %}
@@ -25,8 +27,8 @@ layout: default
     {{ content }}
   </div>
   {%- else %}
-  <p class="on-request">Full text available on request.</p>
+  <p class="on-request">{{ t.on_request }}</p>
   {%- endif %}
 
-  <p class="back"><a href="{{ '/research/' | relative_url }}">← Research and Projects</a></p>
+  <p class="back"><a href="{{ t.research_url | relative_url }}">{{ t.back }}</a></p>
 </article>
